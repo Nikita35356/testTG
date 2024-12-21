@@ -31,11 +31,11 @@ const loadSnarads = (userId) => {
 }
 
 const start = () => {
-    try {
+    /*try {
         const result = fs.readFileSync("./userdata/svo_baza.json", { encoding: "utf-8" });
         USER_DATA.svo_baza = JSON.parse(result)
     } catch (err) {console.error(err);}
-    setInterval(save, 60000)
+    setInterval(save, 60000)*/
     console.log("start")
     bot.setMyCommands([
         {command:'/info',description:"Кто же это?"}
@@ -43,6 +43,8 @@ const start = () => {
 
     bot.on('message',msg => {
         console.log(msg)
+        const chatId = msg.chat.id;
+        bot.sendMessage(chatId, msg.chat.id)
     })
 
     bot.onText(comands.getInfoGame, msg => {
