@@ -9,7 +9,8 @@ const bot = new TelegramApi(token, {polling: true})
 
 const comands = {
     draw: /^нарисовать/i,
-    info: /^\/info/i
+    info: /^\/info/i,
+    stop: /^\/stopplease/i
 }
 
 
@@ -24,6 +25,11 @@ const start = () => {
     bot.onText(comands.draw, async msg => {
         draw(msg,bot)
     })
+bot.onText(commands.stop, async msg => {
+    bot.sendMessage(msg.chat.id,"ухожу")
+    bot.close()
+})
+    
     bot.onText(comands.info, async msg => {
         bot.sendMessage(msg.chat.id,`Короткие записи:
 x - координа x (от 0 до 500)
