@@ -25,7 +25,7 @@ const start = () => {
     bot.onText(comands.draw, async msg => {
         draw(msg,bot)
     })
-bot.onText(commands.stop, async msg => {
+bot.onText(comands.stop, async msg => {
     bot.sendMessage(msg.chat.id,"ухожу")
     bot.close()
 })
