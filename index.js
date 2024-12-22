@@ -24,7 +24,7 @@ const start = () => {
     bot.onText(comands.draw, async msg => {
         draw(msg,bot)
     })
-    bot.onText(commands.info, async msg => {
+    bot.onText(comands.info, async msg => {
         bot.sendMessage(msg.chat.id,`Короткие записи:
 x - координа x (от 0 до 500)
 y - координа y (от 0 до 500)
